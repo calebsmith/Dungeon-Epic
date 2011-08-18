@@ -53,6 +53,7 @@ void map_display(Map& level, Viewpoint& camera, Surface& images){
     for(y = 0; y < h; y++)
     {
         tilexy.y = y * TILEH - camy;
+        
         while(tilexy.y + TILEH < 0 && y < h){
             tilexy.y+= TILEH;
             y++;

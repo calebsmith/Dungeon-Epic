@@ -10,15 +10,15 @@
 #include "functions.h"
 #include "classes.h"
 
-bool get_input(SDL_Event event, Idevice& input)
-{
+bool get_input(SDL_Event event, Idevice& input){
+    
     if(SDL_PollEvent(&event) == 0) return 1;
     if (event.type == SDL_QUIT) return 0;	
     if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_ESCAPE) return 0;
     
-	if (event.type == SDL_KEYDOWN || event.type == SDL_KEYUP)  keyin(event, input);
-    if (event.type == SDL_MOUSEBUTTONDOWN) mousein(event, input);			
-		 
+    if (event.type == SDL_KEYDOWN || event.type == SDL_KEYUP)  keyin(event, input);
+    if (event.type == SDL_MOUSEBUTTONDOWN) mousein(event, input);	
+    
     return 1;
 }
 
@@ -59,10 +59,5 @@ void mousein(SDL_Event event, Idevice& input)
 	if(event.button.button == SDL_BUTTON(SDL_BUTTON_LEFT) && event.type == SDL_MOUSEBUTTONUP){         
 		input.put_click(OFF);
 	}	
-	if(event.button.button == SDL_BUTTON(SDL_BUTTON_RIGHT) && event.type == SDL_MOUSEBUTTONDOWN){
-	    input.put_click(ON);
-    }
-    if(event.button.button == SDL_BUTTON(SDL_BUTTON_RIGHT) && event.type == SDL_MOUSEBUTTONUP){
-        input.put_click(OFF);
-    }
+	
 }

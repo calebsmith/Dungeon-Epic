@@ -225,7 +225,6 @@ class Map: public virtual Location{
         tile_num = get_xy(randx, randy);
         is_full = get_graph(tile_num);
         if (is_full > 0) {
-            cout << randx << "," << randy << " was occupied by " << is_full << '\n';
             xy = random_empty();
         }
         xy.x = randx;

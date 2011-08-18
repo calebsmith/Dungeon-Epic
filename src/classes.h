@@ -12,6 +12,7 @@
 //#include "SDL_timer.h"
 
 #include "constants.h"
+using namespace std;
 
 //SDL helper classes/structs
 struct Keyboard{
@@ -24,7 +25,6 @@ struct Pointdevice{
 struct Surface{
     SDL_Surface* buffer;
     SDL_Surface* background;
-    SDL_Surface* map_buffer;
     SDL_Surface* tilesheet;
     SDL_Surface* playersheet;
     SDL_Surface* spritesheet;
@@ -41,13 +41,17 @@ struct Line{
 class Idevice{
     private:
         Keyboard arrow;
-        Pointdevice mouse;    
+        Pointdevice mouse;
+        int frame_count;    
     public:
         Idevice(){            
             mouse.x = 0; mouse.y = 0;
             mouse.click = 0; mouse.rclick = 0;
             arrow.up = 0; arrow.down = 0; arrow.left = 0; arrow.right = 0;
+            frame_count = 0;
         }
+        void update_frame_count(){frame_count+=1;}
+        void reset_frame_count(){frame_count=0;}
         void put_x(int xin){mouse.x = xin;}
         void put_y(int yin){mouse.y = yin;}
         void put_xy(int xin, int yin){put_x(xin); put_y(yin);}
@@ -83,6 +87,7 @@ class Idevice{
         bool get_down(){bool a = arrow.down; return a;}
         bool get_left(){bool a = arrow.left; return a;}
         bool get_right(){bool a = arrow.right; return a;}
+        int get_frame_count(){int a = frame_count; return a;}
         void show(){
             std::cout << "Keyboard data: " << '\n';
             std::cout << "    Up:    " << arrow.up << '\n';
@@ -122,6 +127,7 @@ class Ticks
             if (diff < MAXFPS_MS){
                 wait(MAXFPS_MS - diff);
             }
+            //cout << "Waited for: " << MAXFPS_MS - diff << '\n';
             reset();
         }
         

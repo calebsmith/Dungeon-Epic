@@ -5,9 +5,10 @@ const int SCRHEIGHT=600;
 const int SCRBPP=32;
 
 const bool FRAMECAP = 1;
-const int MAXFPS_SECONDS = 60;
+const int MAXFPS_SECONDS = 30;
 const int MAXFPS_MS = 1000 / MAXFPS_SECONDS;
 
+const int FRAMESPERPOLL = 0;
 
 const int TILEW = 64;
 const int TILEH = 64;
@@ -15,7 +16,7 @@ const int TILEH = 64;
 const int CHARW = 32;
 const int CHARH = 32;
 
-const int PLAYER_MOVE_PIXELS = 2;
+const int PLAYER_MOVE_PIXELS = 3;
 
 enum{DUNGEON, TOWN, FOREST};
 enum{ON, OFF};

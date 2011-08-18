@@ -46,7 +46,7 @@ void loadmap(Zone& area, Map& level, Player& player1, Surface& images)
         mapnum = area.get_id();          
         floornum = 0;  
         area.init();
-        cout << "area loaded." << '\n';
+//        cout << "area loaded." << '\n';
         level = area.zones[mapnum].floors[floornum]; 
         playx = level.get_begin_x() * TILEW;
         playy = level.get_begin_y() * TILEH;      
@@ -66,7 +66,6 @@ void loadmap(Zone& area, Map& level, Player& player1, Surface& images)
         area.zones[player1.get_map()].floors[player1.get_floor()] = level; 
     }
     
-    cout << "Map: " << mapnum << " Floor: " << floornum << '\n';
     level = area.zones[mapnum].floors[floornum]; 
     level.set_rendered(0); //area is not yet rendered for graphics
     if (area.zones[mapnum].floors[floornum].get_type() == TOWN){
@@ -129,6 +128,8 @@ void quit(Surface& images, Font& fonts)
     SDL_FreeSurface (images.buffer);
     SDL_FreeSurface (images.background);
     SDL_FreeSurface (images.spritesheet);
+    SDL_FreeSurface (images.playersheet);
+    SDL_FreeSurface (images.tilesheet);
     
 	TTF_CloseFont(fonts.font1);
 	
