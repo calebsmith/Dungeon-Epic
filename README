@@ -1,0 +1,20 @@
+Dungeon Epic
+by Caleb Smith
+
+GNU/GPL License
+
+Purpose:
+A cross-platform, action rogue-like
+
+Dependencies:
+Install the SDL library along with the SDL_image, and SDL_ttf extension
+libraries. 
+
+Usage:
+Run make to build from source. Run the program from the root directory.
+
+Note:
+This project is intended to be cross-platform but has only been compiled on
+Debian Linux using the GNU C++ compiler.
+
+See github issues for known problems and intended feature enhancements.
