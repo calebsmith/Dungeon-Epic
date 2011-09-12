@@ -15,6 +15,6 @@ Run make to build from source. Run the program from the root directory.
 
 Note:
 This project is intended to be cross-platform but has only been compiled on
-Debian Linux using the GNU C++ compiler.
+Ubuntu 10.10 and 11.4 using the GNU C++ compiler.
 
 See github issues for known problems and intended feature enhancements.

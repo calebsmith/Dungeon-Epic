@@ -461,8 +461,7 @@ class Zone: public virtual Location{
                 if(zones[id].floors[0].get_tile(tile_num) == 0) break;
             }
                 zones[id].floors[0].put_begin_xy(player_xy); 
-            //cout << "Player: " << player_xy.x << ", " << player_xy.y << '\n';
-            
+            //cout << "Player: " << player_xy.x << ", " << player_xy.y << '\n';            
             //cout << zones[id].floors[0].get_tile(tile_num) << '\n';
         }
         void remove(){

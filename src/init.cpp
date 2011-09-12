@@ -46,7 +46,6 @@ void loadmap(Zone& area, Map& level, Player& player1, Surface& images)
         mapnum = area.get_id();          
         floornum = 0;  
         area.init();
-//        cout << "area loaded." << '\n';
         level = area.zones[mapnum].floors[floornum]; 
         playx = level.get_begin_x() * TILEW;
         playy = level.get_begin_y() * TILEH;      
@@ -128,8 +127,6 @@ void quit(Surface& images, Font& fonts)
     SDL_FreeSurface (images.buffer);
     SDL_FreeSurface (images.background);
     SDL_FreeSurface (images.spritesheet);
-    SDL_FreeSurface (images.playersheet);
-    SDL_FreeSurface (images.tilesheet);
     
 	TTF_CloseFont(fonts.font1);
 	

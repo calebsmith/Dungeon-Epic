@@ -12,7 +12,7 @@
 
 void render(Map& level, Player& player1, Viewpoint& camera, Surface& images, Font& fonts, Ticks& frametimer)
 {
-    //backdrop(images);
+    backdrop(images);
    
     map_display(level, camera, images);
     
@@ -53,7 +53,6 @@ void map_display(Map& level, Viewpoint& camera, Surface& images){
     for(y = 0; y < h; y++)
     {
         tilexy.y = y * TILEH - camy;
-        
         while(tilexy.y + TILEH < 0 && y < h){
             tilexy.y+= TILEH;
             y++;
