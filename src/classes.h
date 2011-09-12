@@ -173,12 +173,14 @@ class Location{
             active = 0;
         }
         virtual void remove(){base_init();}
+        void put_coor(Coor xy){put_coor(xy.x, xy.y);}
         void put_coor(int xin, int yin){x = xin; y = yin;}
+        void put_xy(int xin, int yin){x = xin; y = yin;}
         void put_id(int idin){id = idin;}
         void put_x(int xin){x = xin;}
         void put_y(int yin){y = yin;}
         void put_z(int zin){z = zin;}
-        virtual void deactivate(){active = 0;}
+        void deactivate(){active = 0;}
         void activate(){active = 1;}
         void put_type(int typein){type = typein;}
         void put_flags(int flagsset){flags = flagsset;}
@@ -186,12 +188,13 @@ class Location{
         void sub_flag(int flagsin){flags-=flagsin;}
         
         int get_id(){int a; a = id; return a;}
+        Coor get_coor(){Coor a; a.x = x; a.y = y; return a;}
         int get_x(){int a; a = x; return a;}
         int get_y(){int a; a = y; return a;}
         int get_z(){int a; a = z; return a;}
         int get_type(){int a; a = type; return a;}
         int get_flags(){int a; a = flags; return a;}
-        virtual bool get_active(){bool a; a = active; return a;}
+        bool get_active(){bool a; a = active; return a;}
         
         int random_int(int low, int high){int a = rand() % high + low; return a;}
         void shuffle(int* a, int size)

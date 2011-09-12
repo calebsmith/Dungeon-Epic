@@ -79,7 +79,7 @@ class Map: public virtual Location{
         towns = new Location[townsum + 1];
         for (i = 0; i < roomsum; i++) box[i] = a.box[i];
         for (i = 0; i < pathsum; i++) line[i] = a.line[i];
-        for(i = 0; i < exitsum; i++) door[i] = a.door[i];
+        for (i = 0; i < exitsum; i++) door[i] = a.door[i];
         for (i = 0; i < area; i++) tile[i] = a.tile[i];
         for (i = 0; i < area; i++) graph[i] = a.graph[i];
         for (i = 0; i < area; i++) solids[i] = a.solids[i];
