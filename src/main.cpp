@@ -27,4 +27,3 @@ int main(int argc, char *argv[]) {
     quit(images, fonts);
     return 0;
 }
-
